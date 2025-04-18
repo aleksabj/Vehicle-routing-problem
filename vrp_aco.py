@@ -210,17 +210,16 @@ def plot_results(best_solution: List[List[int]], convergence: List[float],
 def get_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Solve VRP using Ant Colony Optimization")
     parser.add_argument("instance_file", help="XML file containing the VRP instance")
-    parser.add_argument("--ants", type=int, default=10, help="Number of ants (default: 10)")
+    parser.add_argument("--ants", type=int, default=20, help="Number of ants (default: 20)")
     parser.add_argument("--iterations", type=int, default=100, help="Number of iterations (default: 100)")
     parser.add_argument("--alpha", type=float, default=1.0, help="Pheromone influence (default: 1.0)")
-    parser.add_argument("--beta", type=float, default=2.0, help="Distance influence (default: 2.0)")
-    parser.add_argument("--evaporation_rate", type=float, default=0.5, help="Evaporation rate (default: 0.5)")
+    parser.add_argument("--beta", type=float, default=4.0, help="Distance influence (default: 4.0)")
+    parser.add_argument("--evaporation_rate", type=float, default=0.2, help="Evaporation rate (default: 0.2)")
     return parser.parse_args()  #return parsed arguments.
 
 #main function to run the optimization process.
 def main() -> None:
-    args = get_args()matplotlib
-argparse
+    args = get_args() #matplotlib argparse
     instance_file = args.instance_file
     if not os.path.exists(instance_file):
         print(f"Error: File {instance_file} does not exist.")

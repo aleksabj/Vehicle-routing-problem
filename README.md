@@ -49,11 +49,11 @@ The ACO algorithm simulates multiple “ants” that probabilistically build sol
 
 ## ACO Parameters
 I carefully chose the ACO parameters to balance exploration with convergence:
-- **Number of Ants (`num_ants`)**: I set this to **10** to provide sufficient exploration while keeping computation time reasonable.
+- **Number of Ants (`num_ants`)**: I set this to **20** to provide sufficient exploration while keeping computation time reasonable.
 - **Number of Iterations (`num_iterations`)**: I use **100 iterations**. This number allows the pheromone trails to converge while maintaining acceptable runtime.
 - **Pheromone Influence (`alpha`)**: I set `alpha` to **1.0** so that the pheromone trails have a moderate impact on the selection process.
-- **Heuristic Influence (`beta`)**: I choose `beta` as **2.0** to emphasize the importance of the inverse distance, thus favoring shorter hops.
-- **Evaporation Rate (`evaporation_rate`)**: I use a value of **0.5**. This high rate ensures that outdated routes lose their influence rapidly, promoting new explorations.
+- **Heuristic Influence (`beta`)**: I choose `beta` as **4.0** to emphasize the importance of the inverse distance, thus favoring shorter hops.
+- **Evaporation Rate (`evaporation_rate`)**: I use a value of **0.2**. This high rate ensures that outdated routes lose their influence rapidly, promoting new explorations.
 - **Random Seed**: I use `random.seed(42)` to ensure that my experiments are reproducible.
 
 
@@ -85,9 +85,9 @@ Three example runs have been performed:
 - **Parsed Nodes:** 32 (Depot is node 1).
 - **Vehicle Capacity:** 100.0.
 - **ACO Convergence:**  
-  - Initial best cost started at 1211.13 and converged down to 920.23.
+  - Initial best cost started at 1155.29 and converged down to 855.09.
 - **Solution:**  
-  - **Routes:** 5 routes are generated. For example, one route is `[1, 21, 6, 26, 16, 11, 30, 23, 10, 9, 19, 27, 1]`.
+  - **Routes:** 5 routes are generated. For example, one route is `[1, 21, 6, 26, 11, 16, 10, 23, 19, 9, 30, 1]`.
 - **Output:**  
   - Convergence graph and route visualization saved in `output/data_32.jpg`.
 
@@ -95,9 +95,9 @@ Three example runs have been performed:
 - **Parsed Nodes:** 72 (Depot is node 1).
 - **Vehicle Capacity:** 30000.0.
 - **ACO Convergence:**  
-  - The best cost converged to 350.60 after 100 iterations.
+  - The best cost converged to 302.65 after 100 iterations.
 - **Solution:**  
-  - **Routes:** 4 routes are generated; one example is `[1, 21, 30, 24, 27, 25, 26, 29, 23, 22, 31, 28, 47, 54, 44, 45, 43, 46, 49, 48, 71, 53, 51, 50, 52, 40, 69, 1]`.
+  - **Routes:** 4 routes are generated; one example is `[1, 21, 30, 24, 27, 25, 26, 31, 22, 23, 29, 28, 48, 49, 45, 43, 44, 47, 54, 46, 53, 71, 52, 50, 51, 40, 69, 1]`.
 - **Output:**  
   - Convergence graph and route visualization saved in `output/data_72.jpg`.
 
@@ -105,8 +105,8 @@ Three example runs have been performed:
 - **Parsed Nodes:** 421 (Depot is node 421).
 - **Vehicle Capacity:** 200.0.
 - **ACO Convergence:**  
-  - The cost converged to 2500.55 over 100 iterations.
+  - The cost converged to 2294.93 over 100 iterations.
 - **Solution:**  
-  - **Routes:** 38 routes are generated. The output details a series of routes (e.g., Route 1: `[421, 64, 90, ... ,421]`).
+  - **Routes:** 38 routes are generated. The output details a series of routes (e.g., Route 1: `[421, 96, 95, ... ,421]`).
 - **Output:**  
   - Convergence graph and route visualization saved in `output/data_422.jpg`.
